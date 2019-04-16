@@ -2,7 +2,7 @@
 electronic time
 
 ## app capture
-!(https://github.com/cnyb-kwange/tik-tok/blob/master/app-capture.png?raw=true)
+!(https://raw.githubusercontent.com/cnyb-kwange/tik-tok/master/app-capture.png)
 
 ## install
 ```
