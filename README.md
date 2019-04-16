@@ -1,14 +1,14 @@
 # tik-tok
 electronic time
 
-## app capture
-!(https://raw.githubusercontent.com/cnyb-kwange/tik-tok/master/app-capture.png)
+## capture
+![github](https://github.com/cnyb-kwange/tik-tok/blob/master/app-capture.png?raw=true)
 
 ## install
 ```
 npm install
 ```
-## run app
+## run
 ```
 node server.js
 ```
