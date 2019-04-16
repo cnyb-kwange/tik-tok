@@ -1,0 +1,258 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #363636;
+  background-color: #fff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  width: 350px;
+  padding: 20px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 3px 6px #ccc;
+  box-shadow: 0 3px 6px #ccc;
+}
+
+img {
+  width: 100%;
+}
+
+.full {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #dfdfdf;
+  -webkit-box-shadow: 0px 3px 6px #aaa inset;
+  box-shadow: 0px 3px 6px #aaa inset;
+}
+
+.tik-tok {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tik-tok .ymd {
+  width: 300px;
+}
+
+.tik-tok .hms {
+  width: 244px;
+}
+
+.tik-tok .ymd,
+.tik-tok .hms {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  border-radius: 5px;
+  background-color: #363636;
+  overflow: hidden;
+}
+
+.tik-tok .ymd::after,
+.tik-tok .hms::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0px 3px 6px #000 inset;
+  box-shadow: 0px 3px 6px #000 inset;
+}
+
+.tik-tok .num,
+.tik-tok .sym {
+  position: relative;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  height: 42px;
+  padding: 10px 20px;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background-color: #363636;
+  overflow: hidden;
+}
+
+.tik-tok .sym.l,
+.tik-tok .sym.c {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0 -5px;
+  color: #aaa;
+}
+
+.tik-tok .ss {
+  color: #969696;
+}
+
+.tik-tok .spa {
+  margin: 0 20px;
+}
+
+/* animation effect */
+
+.tik-tok .num::before,
+.tik-tok .num::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 42px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #363636;
+  visibility: hidden;
+  -webkit-transition: all 167ms ease-in-out;
+  transition: all 167ms ease-in-out;
+}
+
+.tik-tok .num.ss::before,
+.tik-tok .num.ss::after {
+  color: #969696;
+}
+
+/* 
+ * [*] - pos1
+ * [*] - pos0
+ * [*] - pos2
+ *
+ * 'before' animation: pos0, pos0 -> pos1, pos1 -> pos2
+ */
+.tik-tok .num.ready1::before {
+  top: 0;
+  content: attr(data-pre);
+  visibility: hidden;
+}
+
+.tik-tok .num.ready-go1::before {
+  top: -42px;
+  content: attr(data-pre);
+  visibility: visible;
+}
+
+.tik-tok .num.over::before {
+  display: none;
+  top: 42px;
+}
+
+.tik-tok .num.reset1::before {
+  display: block;
+  top: 42px;
+  content: attr(data-val);
+  visibility: hidden;
+}
+
+/* 
+ * [*] - pos1
+ * [*] - pos0
+ * [*] - pos2
+ *
+ * 'after' animation: pos0, pos0 -> pos1, pos1 -> pos2
+ */
+.tik-tok .num.ready1_::after {
+  top: 0;
+  content: attr(data-pre);
+  visibility: hidden;
+}
+
+.tik-tok .num.ready-go1_::after {
+  top: -42px;
+  content: attr(data-pre);
+  visibility: visible;
+}
+
+.tik-tok .num.over::after {
+  display: none;
+  top: 42px;
+}
+
+.tik-tok .num.reset1_::after {
+  display: block;
+  top: 42px;
+  content: attr(data-val);
+  visibility: hidden;
+}
+
+/* 
+ * [*] - pos1
+ * [*] - pos0
+ * [*] - pos2
+ *
+ * 'before' animation: pos2, pos2 -> pos0, pos0 -> pos1
+ */
+.tik-tok .num.ready2::before {
+  top: 42px;
+  content: attr(data-val);
+  visibility: hidden;
+}
+
+.tik-tok .num.ready-go2::before {
+  top: 0;
+  content: attr(data-val);
+  visibility: visible;
+}
+
+.tik-tok .num.reset2::before {
+  top: -42px;
+  content: attr(data-pre);
+  visibility: hidden;
+}
+
+/* 
+ * [*] - pos1
+ * [*] - pos0
+ * [*] - pos2
+ *
+ * 'after' animation: pos2, pos2 -> pos0, pos0 -> pos1
+ */
+.tik-tok .num.ready2_::after {
+  top: 42px;
+  content: attr(data-val);
+  visibility: hidden;
+}
+
+.tik-tok .num.ready-go2_::after {
+  top: 0;
+  content: attr(data-val);
+  visibility: visible;
+}
+
+.tik-tok .num.reset2_::after {
+  top: -42px;
+  content: attr(data-pre);
+  visibility: hidden;
+}
